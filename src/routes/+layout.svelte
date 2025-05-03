@@ -4,7 +4,9 @@
 	import './styles.css';
 </script>
 
-<header class="bg-base w-full flex gap-2 flex-row text-light-base text-xl p-2 mb-4">
+<header
+	class="bg-base w-full flex align-middle items-center gap-2 top-0 flex-row fixed z-50 text-light-base text-xl p-2"
+>
 	<a class="flex items-center px-4" href="/">
 		<CircleDanceIcon size={12} />
 	</a>
@@ -16,16 +18,19 @@
 	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/about">About</a>
 	<Divider />
 	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/contact">Contact</a>
+	<div class="flex-1" />
+	<h2 class="text-xl mr-4">Circle Dance Tools</h2>
 </header>
 
-<slot />
+<main class="mt-20">
+	<slot />
+</main>
 
 <style>
 	header {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		position: relative;
 	}
-	
+
 	header::after {
 		content: '';
 		position: absolute;
