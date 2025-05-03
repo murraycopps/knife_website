@@ -5,28 +5,28 @@
 </script>
 
 <header
-	class="bg-base w-full flex align-middle items-center gap-2 top-0 flex-row fixed z-50 text-light-base text-xl p-2"
+	class="fixed top-0 z-50 flex flex-row items-center w-full gap-2 p-2 text-xl align-middle bg-base text-light-base"
 >
 	<a class="flex items-center px-4" href="/">
 		<CircleDanceIcon size={12} />
 	</a>
 	<Divider />
-	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/">Home</a>
+	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-base-750" href="/">Home</a>
 	<Divider />
-	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/gallery">Gallery</a>
+	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-base-750" href="/gallery">Gallery</a>
 	<Divider />
-	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/gallery/available"
+	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-base-750" href="/gallery/available"
 		>Available</a
 	>
 	<Divider />
-	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/gallery/projects">Other Projects</a>
+	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-base-750" href="/projects">Other Projects</a>
 
 	<Divider />
-	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/about">About</a>
+	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-base-750" href="/about">About</a>
 	<Divider />
-	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/contact">Contact</a>
+	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-base-750" href="/contact">Contact</a>
 	<div class="flex-1" />
-	<h2 class="text-xl mr-4">Circle Dance Tools</h2>
+	<h2 class="mr-4 text-xl">Circle Dance Tools</h2>
 </header>
 
 <main class="mt-20">

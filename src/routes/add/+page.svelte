@@ -49,8 +49,8 @@
 					name: '',
 					description: '',
 					images: [''],
-                    password: formData.password,
-                    collection: formData.collection
+					password: formData.password,
+					collection: formData.collection
 				};
 			} else {
 				alert(`Error: ${result.error}`);
@@ -61,10 +61,13 @@
 	}
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
+<form
+	on:submit|preventDefault={handleSubmit}
+	class="fixed left-0 w-screen p-2 overflow-y-auto text-base top-20"
+>
 	<div class="form-group">
 		<label>Item Name</label>
-		<input type="text" bind:value={formData.name} required />   
+		<input type="text" bind:value={formData.name} required />
 	</div>
 
 	<div class="form-group">
@@ -110,6 +113,19 @@
 </form>
 
 <style>
+	form {
+		height: calc(100vh - 5rem);
+	}
+	form::-webkit-scrollbar {
+		width: 0.5rem;
+		background-color: transparent;
+	}
+
+	form::-webkit-scrollbar-thumb {
+		background-color: currentColor;
+		opacity: 0.75;
+		border-radius: 0.5rem;
+	}
 	.form-group {
 		margin-bottom: 1.5rem;
 	}

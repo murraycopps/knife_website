@@ -1,7 +1,8 @@
 <script>
 	export let images;
 	export let name;
-	export let description;
+	export let link;
+	export let pageName;
 	let numberOfImages = images.length;
 
 	let currentImageIndex = 0;
@@ -15,23 +16,23 @@
 	};
 </script>
 
-<div class="flex flex-col justify-start gap-4 knife-box">
-	<div class="relative flex gap-4 text-base text-bold">
+<a class="flex flex-col justify-start mx-auto knife-box bg-base text-light-base" href={link}>
+	<div class="relative flex gap-4 text-basetext-2xl text-bold">
 		{#if numberOfImages > 1}
 			<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-light-base"
 				>{'<'}</button
 			>
-		{/if}
+			{/if}
 		<img src={images[currentImageIndex] + '.jpeg'} alt={name} class="w-full h-full" />
 		{#if numberOfImages > 1}
 			<button on:click={moveToNextImage} class="w-8 h-8 rounded-full right bg-light-base"
 				>{'>'}</button
 			>
 		{/if}
+		<h3 class="absolute bottom-0 w-full text-2xl font-bold bg-base text-light-base">{name}</h3>
 	</div>
-	<h2 class="text-2xl font-bold">{name}</h2>
-	<p>{description}</p>
-</div>
+	<h2 class="p-4 text-xl font-bold text-center">Go to {pageName}</h2>
+</a>
 
 <style>
 	.knife-box {
@@ -47,5 +48,14 @@
 	}
 	.right {
 		right: 1rem;
+	}
+
+	h3 {
+		transition: all 0.5s ease-in-out;
+		opacity: 0;
+	}
+
+	.knife-box:hover h3 {
+		opacity: 1;
 	}
 </style>
