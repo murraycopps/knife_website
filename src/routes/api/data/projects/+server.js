@@ -3,7 +3,7 @@ import { MONGODB_URI } from '$env/static/private';
 import { MongoClient } from 'mongodb';
 
 const database = 'knives';
-const coll = 'password';
+const coll = 'projects';
 export async function GET() {
   const client = new MongoClient(MONGODB_URI);
 

@@ -1,9 +1,8 @@
 <script>
-	import KnifeBox from './KnifeBox.svelte';
 	let data = [];
 	async function fetchData() {
 		try {
-			const response = await fetch('/api/data/gallery');
+			const response = await fetch('/api/data/projects');
 			data = await response.json();
 			console.log(data);
 		} catch (error) {
@@ -15,10 +14,7 @@
 </script>
 
 <div class="grid grid-cols-3 gap-4 text-center p-4">
-	{#each data as item}
-		<KnifeBox images={item.images} name={item.name} description={item.description} />
-	{/each}
 	{#if data.length == 0}
-		<h1 class="text-3xl font-bold text-base text-center">No knives displayed</h1>
+		<h1 class="text-3xl font-bold text-base text-center">No projects displayed</h1>
 	{/if}
 </div>

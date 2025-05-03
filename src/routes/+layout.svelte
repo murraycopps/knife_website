@@ -15,6 +15,13 @@
 	<Divider />
 	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/gallery">Gallery</a>
 	<Divider />
+	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/gallery/available"
+		>Available</a
+	>
+	<Divider />
+	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/gallery/projects">Other Projects</a>
+
+	<Divider />
 	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/about">About</a>
 	<Divider />
 	<a class="flex items-center py-2 px-8 hover:bg-base-750 rounded-sm" href="/contact">Contact</a>
