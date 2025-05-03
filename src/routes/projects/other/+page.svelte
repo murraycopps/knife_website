@@ -14,6 +14,9 @@
 	onMount(fetchData);
 </script>
 
+<svelte:head>
+	<title>Other Projects</title>
+</svelte:head>
 <div class="grid w-full grid-cols-3 gap-4 p-4 text-center">
 	<div class="flex flex-col justify-center col-span-3 gap-4 p-10">
 		<h1 class="text-5xl font-bold text-center text-base-800">Other Projects</h1>

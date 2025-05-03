@@ -16,10 +16,14 @@
 	onMount(fetchData);
 </script>
 
+<svelte:head>
+	<title>Available knives</title>
+</svelte:head>
+
 <div class="grid grid-cols-3 gap-4 p-4 text-center">
 	<div class="flex flex-col justify-center col-span-3 gap-4 p-10">
 		<h1 class="text-5xl font-bold text-center text-base-800">Available knives</h1>
-        <p class="text-2xl enter text-l text-base-800">Gallery of knives available for purchase</p>
+		<p class="text-2xl enter text-l text-base-800">Gallery of knives available for purchase</p>
 	</div>
 	{#each data as item}
 		<a href={item.link}>

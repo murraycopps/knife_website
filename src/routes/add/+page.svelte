@@ -122,7 +122,7 @@
 	}
 
 	form::-webkit-scrollbar-thumb {
-		background-color: currentColor;
+		background-color: #323d58;
 		opacity: 0.75;
 		border-radius: 0.5rem;
 	}
