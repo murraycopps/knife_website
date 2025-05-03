@@ -17,7 +17,7 @@
 </script>
 
 <a class="flex flex-col justify-start mx-auto knife-box bg-base text-light-base" href={link}>
-	<div class="relative flex gap-4 text-basetext-2xl text-bold">
+	<div class="relative flex gap-4 text-2xl text-base-800 text-bold">
 		{#if numberOfImages > 1}
 			<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-light-base"
 				>{'<'}</button

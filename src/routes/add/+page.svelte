@@ -63,7 +63,7 @@
 
 <form
 	on:submit|preventDefault={handleSubmit}
-	class="fixed left-0 w-screen p-2 overflow-y-auto text-base top-20"
+	class="fixed left-0 w-screen p-2 overflow-y-auto text-base-800 top-20"
 >
 	<div class="form-group">
 		<label>Item Name</label>

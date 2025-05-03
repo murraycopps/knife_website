@@ -15,8 +15,8 @@
 	};
 </script>
 
-<div class="flex flex-col justify-start gap-4 knife-box">
-	<div class="relative flex gap-4 text-base text-bold">
+<div class="flex flex-col justify-start gap-4 mx-auto knife-box">
+	<div class="relative flex gap-4 text-base-800 text-bold">
 		{#if numberOfImages > 1}
 			<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-light-base"
 				>{'<'}</button
