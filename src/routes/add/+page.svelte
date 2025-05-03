@@ -4,8 +4,17 @@
 		name: '',
 		description: '',
 		images: [''], // Start with one empty image URL
-		password: ''
+		password: '',
+		collection: 'gallery'
 	};
+
+	const collectionOptions = [
+		{ value: 'gallery', label: 'Gallery' },
+		{ value: 'projects', label: 'Projects' },
+		{ value: 'available', label: 'Available' },
+		{ value: 'leather', label: 'Leather' },
+		{ value: 'spoons', label: 'Spoons' }
+	];
 
 	function addImageField() {
 		formData.images = [...formData.images, ''];
@@ -39,7 +48,9 @@
 				formData = {
 					name: '',
 					description: '',
-					images: ['']
+					images: [''],
+                    password: formData.password,
+                    collection: formData.collection
 				};
 			} else {
 				alert(`Error: ${result.error}`);
@@ -53,12 +64,12 @@
 <form on:submit|preventDefault={handleSubmit}>
 	<div class="form-group">
 		<label>Item Name</label>
-		<input type="text" bind:value={formData.name} required />
+		<input type="text" bind:value={formData.name} required />   
 	</div>
 
 	<div class="form-group">
 		<label>Description</label>
-		<textarea bind:value={formData.description} rows="4" required />
+		<textarea bind:value={formData.description} rows="4" placeholder="Knives Only" />
 	</div>
 
 	<div class="form-group">
@@ -80,6 +91,15 @@
 			</div>
 		{/each}
 		<button type="button" on:click|preventDefault={addImageField}> Add Another Image </button>
+	</div>
+
+	<div class="form-group">
+		<label>Collection</label>
+		<select bind:value={formData.collection}>
+			{#each collectionOptions as option}
+				<option value={option.value}>{option.label}</option>
+			{/each}
+		</select>
 	</div>
 	<div class="form-group">
 		<label>Password</label>
@@ -132,5 +152,13 @@
 		border: none;
 		border-radius: 4px;
 		cursor: pointer;
+	}
+
+	select {
+		width: 100%;
+		padding: 0.5rem;
+		margin-bottom: 0.5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
 	}
 </style>

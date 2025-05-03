@@ -3,16 +3,24 @@ import { MONGODB_URI } from '$env/static/private';
 import { MongoClient } from 'mongodb';
 import { json } from '@sveltejs/kit';
 
-
+const database = 'knives';
 
 export async function POST({ request }) {
   const client = new MongoClient(MONGODB_URI);
   const data = await request.json();
 
+  let coll = data.collection;
+  let type = "";
+
+  if (coll == "leather" || coll == "spoons") {
+    type = coll;
+    coll = "projects";
+  }
+
   try {
     await client.connect();
-    const db = client.db('knives');
-    const collection = db.collection('gallery');
+    const db = client.db(database);
+    const collection = db.collection(coll);
     const passwordCollection = db.collection('password');
     const passwordData = await passwordCollection.find({}).toArray();
     const password = passwordData[0].password;
@@ -28,8 +36,12 @@ export async function POST({ request }) {
     const newData = {
       name: data.name,
       description: data.description,
-      images: data.images
+      images: data.images,
     };
+
+    if (type) {
+      newData.type = type;
+    }
 
     const result = await collection.insertOne(newData);
 

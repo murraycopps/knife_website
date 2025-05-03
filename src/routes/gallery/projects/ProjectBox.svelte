@@ -1,0 +1,57 @@
+<script>
+	export let images;
+	export let name;
+	export let description;
+	let numberOfImages = images.length;
+
+	let currentImageIndex = 0;
+
+	const moveToNextImage = () => {
+		currentImageIndex = (currentImageIndex + 1) % numberOfImages;
+	};
+
+	const moveToPreviousImage = () => {
+		currentImageIndex = (currentImageIndex - 1 + numberOfImages) % numberOfImages;
+	};
+</script>
+
+<div class="relative flex flex-col justify-start w-full gap-4 mx-auto text-base text-2xl knife-box text-bold">
+	{#if numberOfImages > 1}
+		<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-light-base"
+			>{'<'}</button
+		>
+	{/if}
+	<img src={images[currentImageIndex] + '.jpeg'} alt={name} class="w-full h-full" />
+	{#if numberOfImages > 1}
+		<button on:click={moveToNextImage} class="w-8 h-8 rounded-full right bg-light-base"
+			>{'>'}</button
+		>
+	{/if}
+	<h2 class="absolute bottom-0 w-full text-2xl font-bold bg-base text-light-base">{name}</h2>
+</div>
+
+<style>
+	.knife-box {
+		width: min(100%, 400px);
+	}
+	button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.left {
+		left: 1rem;
+	}
+	.right {
+		right: 1rem;
+	}
+
+	h2 {
+		transition: all 0.5s ease-in-out;
+		opacity: 0;
+	}
+
+	.knife-box:hover h2 {
+		opacity: 1;
+	}
+</style>
