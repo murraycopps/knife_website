@@ -20,17 +20,23 @@
 	onMount(fetchData);
 </script>
 
-<div class="grid grid-cols-5 gap-8 p-8">
-	<div class="flex flex-col col-span-2 gap-2 relative">
+<div class="grid grid-cols-6 gap-8 p-8">
+	<div class="flex flex-col col-span-2 gap-2 relative justify-center">
 		<h1 class="text-5xl font-bold text-center text-base-800 z-10">About Me</h1>
-		{#each images as img, i}
-			<img
-				src={img + '.jpeg'}
-				alt={'about'}
-				class="w-full h-full rounded-3xl {i !== currentImageIndex ? 'opacity-0' : 'opacity-95'} absolute "
-			/>
-		{/each}
-		<CircleDanceIcon size={24} class_name="absolute bottom-4 right-1/2 translate-x-1/2 z-20 text-base-800" shadow="0px 0px 1rem #e0e6f5" bold={true}/>
+		<div class="relative">
+			{#each images as img, i}
+				<img
+					src={img + '.jpeg'}
+					alt={'about'}
+					class="w-full  rounded-3xl {i !== currentImageIndex
+						? 'opacity-0'
+						: 'opacity-95'} top-0   {i === 0 ? 'relative' : 'absolute'} "
+				/>
+			{/each}
+		</div>
+	</div>
+	<div class="grid items-center justify-center">
+		<CircleDanceIcon size={32} class_name="text-white " fill="#a50021" bold={true} />
 	</div>
 	<p class="text-xl enter text-l text-base-800 col-span-3">
 		When I was ten, I was given another name. At Night Eagle, a summer camp deep in the woods, I
@@ -60,13 +66,7 @@
 <style>
 	img {
 		transition: all 0.5s ease-in-out;
-		max-width: 25vw;
-		/* need to center it as an absolute */
 		left: 50%;
 		transform: translate(-50%, 0);
-	}
-
-	h1 {
-		text-shadow: 0px 0px 1rem #e0e6f5;
 	}
 </style>
