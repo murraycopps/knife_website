@@ -3,7 +3,8 @@
 	let formData = {
 		name: '',
 		description: '',
-		images: [''], // Start with one empty image URL
+		images: [''],
+		link: '',
 		password: '',
 		collection: 'gallery'
 	};
@@ -94,6 +95,11 @@
 			</div>
 		{/each}
 		<button type="button" on:click|preventDefault={addImageField}> Add Another Image </button>
+	</div>
+
+	<div class="form-group">
+		<label>Link</label>
+		<input type="url" bind:value={formData.link} placeholder="https://example.com" />
 	</div>
 
 	<div class="form-group">

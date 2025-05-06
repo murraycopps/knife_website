@@ -16,6 +16,10 @@ export async function POST({ request }) {
     type = coll;
     coll = "projects";
   }
+  if (coll == "available") {
+    coll = "gallery";
+  }
+
 
   try {
     await client.connect();
@@ -41,6 +45,10 @@ export async function POST({ request }) {
 
     if (type) {
       newData.type = type;
+    }
+    if (coll == "available") {
+      newData.type = "available";
+      newData.link = data.link;
     }
 
     const result = await collection.insertOne(newData);
