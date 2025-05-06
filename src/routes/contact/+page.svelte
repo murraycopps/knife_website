@@ -40,7 +40,9 @@
 		}
 	};
 </script>
-
+<svelte:head>
+    <title>Contact</title>
+</svelte:head>
 <div class="flex flex-col justify-center h-full">
 	<div class="grid grid-cols-2 gap-4 p-8">
 		<div>

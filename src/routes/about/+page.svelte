@@ -20,6 +20,9 @@
 	onMount(fetchData);
 </script>
 
+<svelte:head>
+	<title>About</title>
+</svelte:head>
 <div class="grid grid-cols-6 gap-8 p-8">
 	<div class="flex flex-col col-span-2 gap-2 relative justify-center">
 		<h1 class="text-5xl font-bold text-center text-base-800 z-10">About Me</h1>

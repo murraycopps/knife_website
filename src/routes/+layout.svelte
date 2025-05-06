@@ -2,6 +2,10 @@
 	import CircleDanceIcon from '$lib/images/CircleDanceIcon.svelte';
 	import Divider from './layout/Divider.svelte';
 	import './styles.css';
+
+	export const config = {
+		runtime: 'nodejs22.x'
+	};
 </script>
 
 <header
