@@ -1,5 +1,5 @@
 <script>
-	import CircleDanceIcon from './layout/CircleDanceIcon.svelte';
+	import CircleDanceIcon from '$lib/images/CircleDanceIcon.svelte';
 	import Divider from './layout/Divider.svelte';
 	import './styles.css';
 </script>

@@ -1,5 +1,5 @@
 <script>
-	import ProjectBoxDisplay from './ProjectBoxDisplay.svelte';
+	import DisplayBox from '../DisplayBox.svelte';
 	import ProjectBox from './ProjectBox.svelte';
 	import Data from '$lib/scripts/Data.js';
 	import { onMount } from 'svelte';
@@ -29,24 +29,21 @@
 	{#if data.length == 0}
 		<h1 class="text-3xl text-center text-base-800">No projects displayed</h1>
 	{:else}
-		<ProjectBoxDisplay
+		<DisplayBox
 			images={data[0].images}
 			name={data[0].name}
-			description={data[0].description}
 			link="/projects/spoons"
 			pageName="Spoons"
 		/>
-		<ProjectBoxDisplay
+		<DisplayBox
 			images={data[1].images}
 			name={data[1].name}
-			description={data[1].description}
 			link="/projects/leather"
 			pageName="Leather"
 		/>
-		<ProjectBoxDisplay
+		<DisplayBox
 			images={data[2].images}
 			name={data[2].name}
-			description={data[2].description}
 			link="/projects/other"
 			pageName="Other Projects"
 		/>
