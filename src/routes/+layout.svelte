@@ -4,7 +4,7 @@
 	import './styles.css';
 
 	export const config = {
-		runtime: 'nodejs22.x'
+		runtime: 'nodejs18.x'
 	};
 </script>
 
