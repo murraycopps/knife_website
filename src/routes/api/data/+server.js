@@ -47,7 +47,7 @@ export async function POST({ request }) {
       newData.type = type;
     }
     if (coll == "available") {
-      newData.type = "available";
+      newData.available = true;
       newData.link = data.link;
     }
 

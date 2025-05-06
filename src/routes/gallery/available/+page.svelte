@@ -1,5 +1,5 @@
 <script>
-	import KnifeBox from '../KnifeBox.svelte';
+	import KnifeBoxLink from './KnifeBoxLink.svelte';
 	import { onMount } from 'svelte';
 
 	let data = [];
@@ -27,7 +27,7 @@
 	</div>
 	{#each data as item}
 		<a href={item.link}>
-			<KnifeBox images={item.images} name={item.name} description={item.description} /></a
+			<KnifeBoxLink images={item.images} name={item.name} description={item.description} link={item.link} /></a
 		>
 	{/each}
 	{#if data.length == 0}
