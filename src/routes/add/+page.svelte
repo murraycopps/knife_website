@@ -67,20 +67,20 @@
 </svelte:head>
 <form
 	on:submit|preventDefault={handleSubmit}
-	class="fixed left-0 w-screen p-2 overflow-y-auto text-base-800 top-20"
+	class="fixed left-0 w-screen p-2 overflow-y-auto text-white top-20"
 >
 	<div class="form-group">
-		<label>Item Name</label>
+		<label for="name">Item Name</label>
 		<input type="text" bind:value={formData.name} required />
 	</div>
 
 	<div class="form-group">
-		<label>Description</label>
+		<label for="description">Description</label>
 		<textarea bind:value={formData.description} rows="4" placeholder="Knives Only" />
 	</div>
 
 	<div class="form-group">
-		<label>Image URLs</label>
+		<label for="images">Image URLs</label>
 		{#each formData.images as _, index}
 			<div class="image-input">
 				<input
@@ -101,12 +101,12 @@
 	</div>
 
 	<div class="form-group">
-		<label>Link</label>
+		<label for="link">Link</label>
 		<input type="url" bind:value={formData.link} placeholder="https://example.com" />
 	</div>
 
 	<div class="form-group">
-		<label>Collection</label>
+		<label for="collection">Collection</label>
 		<select bind:value={formData.collection}>
 			{#each collectionOptions as option}
 				<option value={option.value}>{option.label}</option>
@@ -114,7 +114,7 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label>Password</label>
+		<label for="password">Password</label>
 		<input type="password" bind:value={formData.password} required />
 	</div>
 
@@ -136,7 +136,7 @@
 		border-radius: 0.5rem;
 	}
 	.form-group {
-		margin-bottom: 1.5rem;
+		margin-bottom: 1rem;
 	}
 
 	label {
@@ -149,7 +149,6 @@
 	textarea {
 		width: 100%;
 		padding: 0.5rem;
-		margin-bottom: 0.5rem;
 		border: 1px solid #ccc;
 		border-radius: 4px;
 	}

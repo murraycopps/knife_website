@@ -18,8 +18,8 @@
 
 <div class="grid w-full grid-cols-3 gap-4 p-4 text-center">
 	<div class="flex flex-col justify-center col-span-3 gap-4 p-10">
-		<h1 class="text-5xl font-bold text-center text-base-800">Leather Work</h1>
-		<p class="text-2xl enter text-l text-base-800">
+		<h1 class="text-5xl font-bold text-center text-oglala">Leather Work</h1>
+		<p class="text-2xl enter text-l text-white">
 			Gallery of leather work excluding the sheath making
 		</p>
 	</div>
@@ -27,6 +27,6 @@
 		<ProjectBox images={item.images} name={item.name} description={item.description} />
 	{/each}
 	{#if data.length == 0}
-		<h1 class="text-3xl font-bold text-center text-base-800">No projects displayed</h1>
+		<h1 class="text-3xl font-bold text-center text-oglala">No projects displayed</h1>
 	{/if}
 </div>

@@ -27,9 +27,9 @@
 			class="mx-auto w-full col-span-2"
 		/>
 		<div class="flex flex-col gap-4 p-4 justify-evenly col-span-3">
-			<h1 class="text-5xl font-bold text-center text-base-800 ">Circle Dance Tools</h1>
+			<h1 class="text-5xl font-bold text-center text-oglala-500 ">Circle Dance Tools</h1>
 
-			<p class="text-2xl enter text-l text-base-800 col-span-3">
+			<p class="text-2xl enter text-l text-white col-span-3">
 				Inspired by years of carving and bushcraft in the woods, Circle Dance knives are built for
 				real work—simple, reliable, and ready to be used hard. Each blade is handcrafted from
 				premium steels paired with durable wood or micarta handles, and designed to deliver top-tier
@@ -38,7 +38,7 @@
 		</div>
 	</div>
 	{#if knives.length == 0 || projects.length == 0}
-		<h1 class="text-3xl text-center text-base-800">Loading...</h1>
+		<h1 class="text-3xl text-center text-white ">Loading...</h1>
 	{:else}
 		<DisplayBox
 			images={knives[1].images}

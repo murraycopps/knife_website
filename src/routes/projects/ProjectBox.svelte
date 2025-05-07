@@ -15,7 +15,7 @@
 </script>
 
 <div
-	class="relative flex flex-col justify-start w-full gap-4 mx-auto text-2xl text-base-800 knife-box text-bold"
+	class="relative flex flex-col justify-start w-full gap-4 mx-auto text-2xl text-oglala-900 knife-box text-bold"
 >
 	{#each images as img, i}
 		<img
@@ -35,7 +35,7 @@
 		</button>
 	{/if}
 
-	<h2 class="absolute bottom-0 w-full text-2xl font-bold bg-base text-light-base">{name}</h2>
+	<h2 class="absolute bottom-0 w-full text-2xl font-bold bg-oglala text-white">{name}</h2>
 </div>
 
 <style>

@@ -47,8 +47,8 @@
 <div class="flex flex-col justify-center h-full">
 	<div class="grid grid-cols-2 gap-4 p-8">
 		<div>
-			<h2 class="text-3xl text-center mb-4">Contact me</h2>
-			<p class="text-2xl ">
+			<h2 class="text-3xl text-center mb-4 text-oglala">Contact me</h2>
+			<p class="text-2xl text-white">
 				If you would like to get in touch with me, please fill out the form and I will get back to
 				you as soon as possible. Please note that I am not currently accepting custom orders at this
 				time but feel free to reach out with a design you have in mind and I will see what I can do.
@@ -95,10 +95,10 @@
 				class="p-2 rounded-lg border"
 				bind:value={data.message}
 			/>
-			<button type="submit" class="p-2 rounded-lg border bg-base text-light-base hover:bg-base-750"
+			<button type="submit" class="p-2 rounded-lg bg-oglala text-white hover:bg-oglala-400"
 				>Submit</button
 			>
-			<div class="text-center">{status}</div>
+			<div class="text-center text-white">{status}</div>
 		</form>
 	</div>
 </div>

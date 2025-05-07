@@ -15,8 +15,8 @@
 	};
 </script>
 
-<div class="flex flex-col justify-start gap-4 mx-auto knife-box">
-	<div class="relative flex gap-4 text-2xl text-base-800 text-bold">
+<div class="flex flex-col justify-start gap-4 mx-auto knife-box text-oglala">
+	<div class="relative flex gap-4 text-2xl text-oglala-900 text-bold">
 		{#each images as img, i}
 			<img
 				src={img + '.jpeg'}
@@ -27,16 +27,16 @@
 			/>
 		{/each}
 		{#if numberOfImages > 1}
-			<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-light-base"
+			<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-white"
 				>{'<'}</button
 			>
-			<button on:click={moveToNextImage} class="w-8 h-8 rounded-full right bg-light-base"
+			<button on:click={moveToNextImage} class="w-8 h-8 rounded-full right bg-white"
 				>{'>'}</button
 			>
 		{/if}
 	</div>
 	<h2 class="text-2xl font-bold">{name}</h2>
-	<p>{description}</p>
+	<p class="text-white">{description}</p>
 </div>
 
 <style>

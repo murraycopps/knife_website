@@ -17,7 +17,7 @@
 </script>
 
 <div class="flex flex-col justify-start gap-4 mx-auto knife-box">
-	<div class="relative flex gap-4 text-2xl text-base-800 text-bold">
+	<div class="relative flex gap-4 text-2xl text-oglala-900 text-bold">
 		{#each images as img, i}
 			<img
 				src={img + '.jpeg'}
@@ -36,9 +36,9 @@
 			>
 		{/if}
 	</div>
-	<h2 class="text-2xl font-bold">{name}</h2>
-	<p>{description}</p>
-	<a href={link} target="_blank" class="self-center py-2 text-2xl rounded-full text-base-750 hover:text-base-700" >Purchase at: {link}</a>
+	<h2 class="text-2xl font-bold text-oglala">{name}</h2>
+	<p class="text-white">{description}</p>
+	<a href={link} target="_blank" class="self-center py-2 text-2xl rounded-full text-oglala hover:text-oglala-400" >Purchase at: {link}</a>
 </div>
 
 <style>

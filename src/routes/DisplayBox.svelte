@@ -4,6 +4,7 @@
 	export let link;
 	export let pageName;
 	let numberOfImages = images.length;
+	let hovered = false;
 
 	let currentImageIndex = 0;
 
@@ -17,8 +18,8 @@
 	};
 </script>
 
-<a class="flex flex-col justify-start mx-auto knife-box bg-base text-light-base" href={link}>
-	<div class="relative flex gap-4 text-2xl text-base-800 text-bold">
+<a class="flex flex-col justify-start mx-auto knife-box bg-oglala-800 hover:bg-oglala-700 text-white" on:mouseenter={() => (hovered = true)} on:mouseleave={() => (hovered = false)} href={link}>
+	<div class="relative flex gap-4 text-2xl text-oglala-900 text-bold">
 		{#each images as img, i}
 			<img
 				src={img + '.jpeg'}
@@ -29,14 +30,14 @@
 			/>
 		{/each}
 		{#if numberOfImages > 1}
-			<button on:click|preventDefault={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-light-base"
+			<button on:click|preventDefault={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-white"
 				>{'<'}</button
 			>
-			<button on:click|preventDefault={moveToNextImage} class="w-8 h-8 rounded-full right bg-light-base"
+			<button on:click|preventDefault={moveToNextImage} class="w-8 h-8 rounded-full right bg-white"
 				>{'>'}</button
 			>
 		{/if}
-		<h3 class="absolute bottom-0 w-full text-2xl font-bold bg-base text-light-base">{name}</h3>
+		<h3 class="absolute bottom-0 w-full text-2xl font-bold {hovered ? "bg-oglala-700 opacity-1" : "bg-oglala-800 opacity-0"} text-white">{name}</h3>
 	</div>
 	<h2 class="p-4 text-xl font-bold text-center">Go to {pageName}</h2>
 </a>
@@ -60,13 +61,7 @@
 	.right {
 		right: 1rem;
 	}
-
-	h3 {
+	*{
 		transition: all 0.5s ease-in-out;
-		opacity: 0;
-	}
-
-	.knife-box:hover h3 {
-		opacity: 1;
 	}
 </style>

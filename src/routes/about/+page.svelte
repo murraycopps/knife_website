@@ -25,7 +25,7 @@
 </svelte:head>
 <div class="grid grid-cols-6 gap-8 p-8">
 	<div class="flex flex-col col-span-2 gap-2 relative justify-center">
-		<h1 class="text-5xl font-bold text-center text-base-800 z-10">About Me</h1>
+		<h1 class="text-5xl font-bold text-center text-oglala z-10">About Me</h1>
 		<div class="relative">
 			{#each images as img, i}
 				<img
@@ -41,7 +41,7 @@
 	<div class="grid items-center justify-center">
 		<CircleDanceIcon size={32} class_name="text-white " fill="#a50021" bold={true} />
 	</div>
-	<p class="text-xl enter text-l text-base-800 col-span-3">
+	<p class="text-xl enter text-l text-white col-span-3">
 		When I was ten, I was given another name. At Night Eagle, a summer camp deep in the woods, I
 		received the name Circle Dance—a name that reflected who I was and the qualities others saw in
 		me. This camp, where carving, bushcraft, and survival weren’t just pastimes but everyday
