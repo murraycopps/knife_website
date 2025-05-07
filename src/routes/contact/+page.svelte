@@ -4,7 +4,8 @@
 		name: '',
 		email: '',
 		subject: '',
-		message: ''
+		message: '',
+        form_name: 'Knife Store Contact Form'
 	};
 	let status = '';
 	const handleSubmit = async () => {
