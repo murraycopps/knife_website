@@ -5,6 +5,7 @@
 
 	let images = [];
 	let currentImageIndex = 0;
+	let size = 'xs';
 
 	const cycleImages = () => {
 		currentImageIndex = (currentImageIndex + 1) % images.length;
@@ -17,31 +18,51 @@
 		cycleImages();
 	}
 
+	const handleResize = () => {
+		if (window.innerWidth > 1024) {
+			size = 'lg';
+		} else if (window.innerWidth > 640) {
+			size = 'sm';
+		} else {
+			size = 'xs';
+		}
+	};
+
 	onMount(fetchData);
+
+	onMount(() => {
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	});
 </script>
 
 <svelte:head>
 	<title>About</title>
 </svelte:head>
-<div class="grid grid-cols-6 gap-8 p-8">
-	<div class="flex flex-col col-span-2 gap-2 relative justify-center">
+<div class="grid grid-cols-2 lg:grid-cols-6 gap-8 p-8">
+	<div class="flex flex-col lg:col-span-2 gap-2 relative justify-center">
 		<h1 class="text-5xl font-bold text-center text-oglala z-10">About Me</h1>
-		<div class="relative">
-			{#each images as img, i}
-				<img
-					src={img + '.jpeg'}
-					alt={'about'}
-					class="w-full  rounded-3xl {i !== currentImageIndex
-						? 'opacity-0'
-						: 'opacity-95'} top-0   {i === 0 ? 'relative' : 'absolute'} "
-				/>
-			{/each}
-		</div>
+		{#if size == 'lg'}
+			<div class="relative">
+				{#each images as img, i}
+					<img
+						src={img + '.jpeg'}
+						alt={'about'}
+						class="w-full rounded-3xl {i !== currentImageIndex
+							? 'opacity-0'
+							: 'opacity-95'} top-0 {i === 0 ? 'relative' : 'absolute'} "
+					/>
+				{/each}
+			</div>
+		{/if}
 	</div>
 	<div class="grid items-center justify-center">
 		<CircleDanceIcon size={32} class_name="text-white " fill="#a50021" bold={true} />
 	</div>
-	<p class="text-xl enter text-l text-white col-span-3">
+	<p class="text-xl enter text-l text-white col-span-2 lg:col-span-3">
 		When I was ten, I was given another name. At Night Eagle, a summer camp deep in the woods, I
 		received the name Circle Dance—a name that reflected who I was and the qualities others saw in
 		me. This camp, where carving, bushcraft, and survival weren’t just pastimes but everyday

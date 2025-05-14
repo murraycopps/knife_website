@@ -19,8 +19,8 @@
 	<title>Projects</title>
 </svelte:head>
 
-<div class="grid w-full grid-cols-3 gap-4 p-4 text-center">
-	<div class="flex flex-col justify-center col-span-3 gap-4 p-10">
+<div class="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 text-center">
+	<div class="flex flex-col justify-center sm:col-span-2 lg:col-span-3 gap-4 p-10">
 		<h1 class="text-5xl font-bold text-center text-oglala">Other Projects</h1>
 		<p class="text-2xl enter text-l text-white">
 			Gallery of other projects including carving and leather work
@@ -47,7 +47,7 @@
 			link="/projects/other"
 			pageName="Other Projects"
 		/>
-		<div class="w-full h-4 col-span-3 rounded-full bg-oglala" />
+		<div class="w-full h-4 sm:col-span-2 lg:col-span-3 rounded-full bg-oglala" />
 		{#each projects as item}
 			<ProjectBox images={item.images} name={item.name} description={item.description} />
 		{/each}

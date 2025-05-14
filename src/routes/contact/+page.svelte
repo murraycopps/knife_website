@@ -45,7 +45,7 @@
     <title>Contact</title>
 </svelte:head>
 <div class="flex flex-col justify-center h-full">
-	<div class="grid grid-cols-2 gap-4 p-8">
+	<div class="grid lg:grid-cols-2 gap-4 p-8">
 		<div>
 			<h2 class="text-3xl text-center mb-4 text-oglala">Contact me</h2>
 			<p class="text-2xl text-white">
