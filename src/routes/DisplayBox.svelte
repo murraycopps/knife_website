@@ -9,7 +9,6 @@
 	let currentImageIndex = 0;
 
 	const moveToNextImage = () => {
-		console.log('moveToNextImage');
 		currentImageIndex = (currentImageIndex + 1) % numberOfImages;
 	};
 

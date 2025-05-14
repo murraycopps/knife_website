@@ -12,7 +12,6 @@
 		if (status == 'Submitting...') return;
 		status = 'Submitting...';
 		data.subject = 'Contact Form Submission Knife Store: ' + data.subject;
-		console.log(data);
 		const json = JSON.stringify(data);
 
 		const response = await fetch('https://api.web3forms.com/submit', {
@@ -26,7 +25,6 @@
 
 		const result = await response.json();
 		if (result.success) {
-			console.log(result);
 			status = result.message || 'Success';
 			data = {
 				access_key: '848fbb6e-fc42-4751-bc62-b0031d8359a4',

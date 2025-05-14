@@ -12,7 +12,6 @@
 			} else {
 				large = false;
 			}
-			console.log('Window resized:', window.innerWidth, large);
 		};
 		handleResize();
 		window.addEventListener('resize', handleResize);

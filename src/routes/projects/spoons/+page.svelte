@@ -8,7 +8,6 @@
 	async function fetchData() {
 		data = await Data.getProjects();
 		data = data.filter((item) => item.type == 'spoons' && !item.displayOnly);
-		console.log(data);
 	}
 	onMount(fetchData);
 </script>
