@@ -56,3 +56,28 @@ export async function POST({ request }) {
     await client.close();
   }
 }
+
+export async function DELETE({ request }) {
+  const client = new MongoClient(MONGODB_URI);
+  const { collectionName, id } = await request.json();
+
+  try {
+    await client.connect();
+    const db = client.db(database);
+    const collection = db.collection(collectionName);
+
+    const newObjectId = new ObjectId(id);
+
+    const result = await collection.deleteOne({ _id: newObjectId });
+    return json({ success: true, deletedCount: result.deletedCount });
+
+  } catch (error) {
+    return json({
+      success: false,
+      error: error.message
+    }, { status: 500 });
+
+  } finally {
+    await client.close();
+  }
+}

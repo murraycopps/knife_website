@@ -16,7 +16,6 @@ export default class Data {
             const response2 = await fetch('/api/data/projects');
             Data.projects = await response2.json();
             Data.projects.sort((a, b) => a.number - b.number);
-            console.log(this.projects);
 
             Data.loaded = true;
             Data.createImages();

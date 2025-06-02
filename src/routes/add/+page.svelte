@@ -1,5 +1,6 @@
 <!-- src/routes/items/ItemForm.svelte -->
 <script>
+	import Data from '$lib/scripts/Data.js';
 	let formData = {
 		name: '',
 		description: '',
@@ -48,6 +49,7 @@
 							'Content-Type': 'application/json'
 						},
 						body: JSON.stringify({
+							collectionName: "gallery",
 							item: item.item,
 							id: item.id
 						})
@@ -65,6 +67,7 @@
 					delete item._id;
 					item.number = item.number + 1;
 					return {
+						collection: 'projects',
 						id,
 						item: item
 					};
@@ -112,7 +115,8 @@
 					description: '',
 					images: [''],
 					password: formData.password,
-					collection: formData.collection
+					collection: formData.collection,
+					number: 1
 				};
 			} else {
 				alert(`Error: ${result.error}`);
@@ -168,7 +172,7 @@
 
 	<div class="form-group">
 		<label for="collection">Collection</label>
-		<select bind:value={formData.collection}>
+		<select bind:value={formData.collection} class="text-black">
 			{#each collectionOptions as option}
 				<option value={option.value}>{option.label}</option>
 			{/each}
@@ -212,6 +216,7 @@
 		padding: 0.5rem;
 		border: 1px solid #ccc;
 		border-radius: 4px;
+		color: black;
 	}
 
 	.image-input {
