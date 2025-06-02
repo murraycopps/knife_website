@@ -8,7 +8,6 @@
 		link: '',
 		password: '',
 		collection: 'gallery',
-		number: 1
 	};
 
 	const collectionOptions = [
@@ -60,7 +59,7 @@
 				
 				await Data.reload();
 			}
-			else if (formData.collection === 'projects') {
+			else {
 				let projects = await Data.getProjects();
 				projects = projects.map((item, index) => {
 					const id = item._id;
@@ -101,8 +100,8 @@
 				},
 				body: JSON.stringify({
 					...formData,
-					images: cleanImages
-				})
+					images: cleanImages,
+								})
 			});
 
 			const result = await response.json();
@@ -116,7 +115,6 @@
 					images: [''],
 					password: formData.password,
 					collection: formData.collection,
-					number: 1
 				};
 			} else {
 				alert(`Error: ${result.error}`);
