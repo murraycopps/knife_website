@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Data from '$lib/scripts/Data.js';
-	let admin = true;
+	let admin = false;
 	let password = '';
 	let value = '';
 	let gallery = [];
