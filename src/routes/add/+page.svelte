@@ -6,7 +6,8 @@
 		images: [''],
 		link: '',
 		password: '',
-		collection: 'gallery'
+		collection: 'gallery',
+		number: 1
 	};
 
 	const collectionOptions = [
@@ -27,10 +28,70 @@
 
 	async function handleSubmit() {
 		try {
+			// increase every other item by 1
+			if (formData.collection === 'gallery' || formData.collection === 'available') {
+				let gallery = await Data.getGallery();
+				gallery = gallery.map((item, index) => {
+					const id = item._id;
+					delete item._id;
+					item.number = item.number + 1;
+					return {
+						id,
+						item: item
+					};
+				});
+
+				const updateOne = async (item) => {
+					const response = await fetch('/api/data/edit', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							item: item.item,
+							id: item.id
+						})
+					});
+					return response.json();
+				};
+				await Promise.all(gallery.map(updateOne));
+				
+				await Data.reload();
+			}
+			else if (formData.collection === 'projects') {
+				let projects = await Data.getProjects();
+				projects = projects.map((item, index) => {
+					const id = item._id;
+					delete item._id;
+					item.number = item.number + 1;
+					return {
+						id,
+						item: item
+					};
+				});
+
+				const updateOne = async (item) => {
+					const response = await fetch('/api/data/edit', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							item: item.item,
+							id: item.id
+						})
+					});
+					return response.json();
+				};
+				await Promise.all(projects.map(updateOne));
+				
+				await Data.reload();
+			}
+
 			// Filter out empty image strings
 			const cleanImages = formData.images.filter((url) => url.trim() !== '');
 
-			const response = await fetch('/api/data', {
+			const response = await fetch('/api/data/add', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
