@@ -13,8 +13,6 @@
 	let end = 0;
 
 	const check = () => {
-		console.log(password);
-		console.log(value);
 		if (password == value && password != '') {
 			admin = true;
 		}
