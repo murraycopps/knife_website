@@ -1,12 +1,13 @@
 <!-- src/routes/items/ItemForm.svelte -->
 <script>
+	import Data from '$lib/scripts/Data.js';
 	let formData = {
 		name: '',
 		description: '',
 		images: [''],
 		link: '',
 		password: '',
-		collection: 'gallery'
+		collection: 'gallery',
 	};
 
 	const collectionOptions = [
@@ -28,18 +29,80 @@
 
 	async function handleSubmit() {
 		try {
+			// increase every other item by 1
+			if (formData.collection === 'gallery' || formData.collection === 'available') {
+				let gallery = await Data.getGallery();
+				gallery = gallery.map((item, index) => {
+					const id = item._id;
+					delete item._id;
+					item.number = item.number + 1;
+					return {
+						id,
+						item: item
+					};
+				});
+
+				const updateOne = async (item) => {
+					const response = await fetch('/api/data/edit', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							collectionName: "gallery",
+							item: item.item,
+							id: item.id
+						})
+					});
+					return response.json();
+				};
+				await Promise.all(gallery.map(updateOne));
+				
+				await Data.reload();
+			}
+			else {
+				let projects = await Data.getProjects();
+				projects = projects.map((item, index) => {
+					const id = item._id;
+					delete item._id;
+					item.number = item.number + 1;
+					return {
+						collection: 'projects',
+						id,
+						item: item
+					};
+				});
+
+				const updateOne = async (item) => {
+					const response = await fetch('/api/data/edit', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							item: item.item,
+							id: item.id
+						})
+					});
+					return response.json();
+				};
+				await Promise.all(projects.map(updateOne));
+				
+				await Data.reload();
+			}
+
 			// Filter out empty image strings
 			const cleanImages = formData.images.filter((url) => url.trim() !== '');
 
-			const response = await fetch('/api/data', {
+			const response = await fetch('/api/data/add', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
 					...formData,
-					images: cleanImages
-				})
+					images: cleanImages,
+								})
 			});
 
 			const result = await response.json();
@@ -52,7 +115,7 @@
 					description: '',
 					images: [''],
 					password: formData.password,
-					collection: formData.collection
+					collection: formData.collection,
 				};
 			} else {
 				alert(`Error: ${result.error}`);
@@ -108,7 +171,7 @@
 
 	<div class="form-group">
 		<label for="collection">Collection</label>
-		<select bind:value={formData.collection}>
+		<select bind:value={formData.collection} class="text-black">
 			{#each collectionOptions as option}
 				<option value={option.value}>{option.label}</option>
 			{/each}

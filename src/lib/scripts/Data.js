@@ -10,8 +10,14 @@ export default class Data {
         try {
             const response = await fetch('/api/data/gallery');
             Data.gallery = await response.json();
+            
+            Data.gallery.sort((a, b) => a.number - b.number);
+            
+            
             const response2 = await fetch('/api/data/projects');
             Data.projects = await response2.json();
+            Data.projects.sort((a, b) => a.number - b.number);
+
             Data.projects.sort((a, b) => b.images.length - a.images.length);
             const response3 = await fetch('/api/data/progress');
             Data.progress = await response3.json();
@@ -21,6 +27,14 @@ export default class Data {
             console.log(error);
         }
     }
+
+    static async reload() {
+        Data.loaded = false;
+        Data.gallery = [];
+        Data.projects = [];
+        Data.images = [];
+        await Data.load();
+    } 
 
     static async getGallery() {
         if (!Data.loaded) await Data.load();

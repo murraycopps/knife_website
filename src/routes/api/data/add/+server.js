@@ -41,6 +41,7 @@ export async function POST({ request }) {
       name: data.name,
       description: data.description,
       images: data.images,
+      number: 1,
     };
 
     if (type) {
