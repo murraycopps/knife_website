@@ -1,6 +1,7 @@
 export default class Data {
     static gallery = [];
     static projects = [];
+    static progress = [];
     static images = [];
     static loaded = false;
 
@@ -12,6 +13,8 @@ export default class Data {
             const response2 = await fetch('/api/data/projects');
             Data.projects = await response2.json();
             Data.projects.sort((a, b) => b.images.length - a.images.length);
+            const response3 = await fetch('/api/data/progress');
+            Data.progress = await response3.json();
             Data.loaded = true;
             Data.createImages();
         } catch (error) {

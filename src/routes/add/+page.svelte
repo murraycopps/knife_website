@@ -14,7 +14,8 @@
 		{ value: 'projects', label: 'Projects' },
 		{ value: 'available', label: 'Available' },
 		{ value: 'leather', label: 'Leather' },
-		{ value: 'spoons', label: 'Spoons' }
+		{ value: 'spoons', label: 'Spoons' },
+		{ value: 'progress', label: 'Progress' },
 	];
 
 	function addImageField() {
@@ -151,6 +152,7 @@
 		padding: 0.5rem;
 		border: 1px solid #ccc;
 		border-radius: 4px;
+		color: black;
 	}
 
 	.image-input {
@@ -184,5 +186,6 @@
 		margin-bottom: 0.5rem;
 		border: 1px solid #ccc;
 		border-radius: 4px;
+		color: black;
 	}
 </style>
