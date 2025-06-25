@@ -23,6 +23,8 @@
 		>Other Projects</a
 	>
 	<Divider />
+	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-oglala-600" href="/progress">In Progress</a>
+	<Divider />
 	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-oglala-600" href="/about">About</a>
 	<Divider />
 	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-oglala-600" href="/contact">Contact</a>

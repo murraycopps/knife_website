@@ -49,9 +49,9 @@
 			<p class="text-2xl text-white">
 				If you would like to get in touch with me, please fill out the form and I will get back to
 				you as soon as possible. Please note that I am not currently accepting custom orders at this
-				time but feel free to reach out with a design you have in mind and I will see what I can do.
+				time but feel free to reach out with your ideas and I will see what I can do.
 				<br /> <br />
-				Purchases are done through ebay but feel free to reach out with any questions you may have regarding
+				Purchases are done through etsy but feel free to reach out with any questions you may have regarding
 				my knives.
 				<br /> <br />
 				Thanks for stopping by!

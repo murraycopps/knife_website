@@ -24,7 +24,12 @@
 
 		await loadData();
 		loading = false;
-		end = gallery[gallery.length - 1]?.item?.number || 0;
+		start = 1;
+		if (inGallery) {
+			end = gallery[gallery.length - 1]?.item?.number || 0;
+		} else {
+			end = projects[projects.length - 1]?.item?.number || 0;
+		}
 	};
 
 	const loadData = async () => {
@@ -36,14 +41,14 @@
 			const id = item._id;
 			delete item._id;
 			const text = JSON.stringify(item, null, 8);
+			end = gallery[gallery.length - 1]?.item?.number || 0;
+
 			return {
 				id,
 				item: item,
 				text: text
 			};
 		});
-		
-		end = gallery[gallery.length - 1]?.item?.number || 0;
 
 		projects = projects.map((item, index) => {
 			const id = item._id;
@@ -110,31 +115,49 @@
 
 	const increment = async (start, end) => {
 		console.log('Incrementing from', start, 'to', end);
-		if( !end ) {
-			end = gallery[gallery.length - 1].item.number;
-		}
-		gallery.forEach((item) => {
-			if (item.item.number >= start && item.item.number <= end) {
-				item.item.number += 1;
+		if (!end) {
+			if (inGallery) {
+				end = gallery[gallery.length - 1].item.number;
+			} else {
+				end = projects[projects.length - 1].item.number;
 			}
-		});
-		gallery.sort((a, b) => a.item.number - b.item.number);
-		
-	}
+		}
+		if (inGallery) {
+			gallery.forEach((item) => {
+				if (item.item.number >= start && item.item.number <= end) {
+					item.item.number += 1;
+				}
+			});
+			gallery.sort((a, b) => a.item.number - b.item.number);
+		}
+		else {
+			projects.forEach((item) => {
+				if (item.item.number >= start && item.item.number <= end) {
+					item.item.number += 1;
+				}
+			});
+			projects.sort((a, b) => a.item.number - b.item.number);
+		}
+	};
 
 	const decrement = async (start, end) => {
 		console.log('Decrementing from', start, 'to', end);
-		if( !end ) {
-			end = gallery[gallery.length - 1].item.number;
-		}
-		gallery.forEach((item) => {
-			if (item.item.number >= start && item.item.number <= end) {
-				item.item.number -= 1;
+		if (!end) {
+			if (inGallery) {
+				end = gallery[gallery.length - 1].item.number;
+			} else {
+				end = projects[projects.length - 1].item.number;
 			}
-		});
-	}
-
-	
+		}
+		if (inGallery) {
+			gallery.forEach((item) => {
+				if (item.item.number >= start && item.item.number <= end) {
+					item.item.number -= 1;
+				}
+			});
+			gallery.sort((a, b) => a.item.number - b.item.number);
+		}
+	};
 
 	onMount(load);
 </script>
@@ -146,17 +169,23 @@
 {/if}
 
 {#if admin}
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 text-center">
-	<div class="flex flex-col justify-evenly gap-8  text-white">
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 text-center">
+		<div class="flex flex-col justify-evenly gap-8 text-white">
 			<button
 				on:click={(e) => {
 					inGallery = !inGallery;
+					start = 1;
+					if (inGallery) {
+						end = gallery[gallery.length - 1]?.item?.number || 0;
+					} else {
+						end = projects[projects.length - 1]?.item?.number || 0;
+					}
 				}}
 				class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
 			>
 				Toggle Gallery/Projects
 			</button>
-			 <div class="grid grid-cols-2 gap-2">
+			<div class="grid grid-cols-2 gap-2">
 				<input
 					type="number"
 					placeholder="Start Number"
@@ -174,14 +203,14 @@
 						e.preventDefault();
 						increment(start, end);
 						if (inGallery) {
-						gallery.forEach((item) => {
-							updateOne(item);
-						});
-					} else {
-						projects.forEach((item) => {
-							updateOne(item);
-						});
-					}
+							gallery.forEach((item) => {
+								updateOne(item);
+							});
+						} else {
+							projects.forEach((item) => {
+								updateOne(item);
+							});
+						}
 					}}
 					class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors"
 				>
@@ -192,14 +221,14 @@
 						e.preventDefault();
 						decrement(start, end);
 						if (inGallery) {
-						gallery.forEach((item) => {
-							updateOne(item);
-						});
-					} else {
-						projects.forEach((item) => {
-							updateOne(item);
-						});
-					}
+							gallery.forEach((item) => {
+								updateOne(item);
+							});
+						} else {
+							projects.forEach((item) => {
+								updateOne(item);
+							});
+						}
 					}}
 					class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors"
 				>
@@ -207,7 +236,7 @@
 				</button>
 			</div>
 
-			<button 
+			<button
 				on:click={(e) => {
 					e.preventDefault();
 					if (inGallery) {
@@ -224,40 +253,43 @@
 			>
 				Update All
 			</button>
-
 		</div>
-	{#if inGallery}
+		{#if inGallery}
 			{#each gallery as item}
-					<div class="w-full relative aspect-square">
-
-						<textarea class="absolute p-2 pt-6 inset-0 bg-gray-800 text-white rounded" bind:value={item.text}/>
-						<div class="grid absolute top-0 right-0 grid-cols-2 gap-2">
-
-							<button
+				<div class="w-full relative aspect-square">
+					<textarea
+						class="absolute p-2 pt-6 inset-0 bg-gray-800 text-white rounded"
+						bind:value={item.text}
+					/>
+					<div class="grid absolute top-0 right-0 grid-cols-2 gap-2">
+						<button
 							on:click={(e) => {
 								e.preventDefault();
 								updateItem(item);
 							}}
-						class=" bg-blue-500 text-white px-4 py-2 rounded  hover:bg-blue-600 transition-colors"
+							class=" bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
 						>
-						Update
-					</button>
-					<button
-						on:click={(e) => {
-							e.preventDefault();
-							deleteOne(item);
-						}}
-						class=" bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors"
-					>
-						Delete
-					</button>
-				</div>
+							Update
+						</button>
+						<button
+							on:click={(e) => {
+								e.preventDefault();
+								deleteOne(item);
+							}}
+							class=" bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors"
+						>
+							Delete
+						</button>
+					</div>
 				</div>
 			{/each}
-	{:else}
+		{:else}
 			{#each projects as item}
 				<div class="w-full relative aspect-square">
-					<textarea class="absolute p-2 inset-0 bg-gray-800 text-white rounded" bind:value={item.text}/>
+					<textarea
+						class="absolute p-2 inset-0 bg-gray-800 text-white rounded"
+						bind:value={item.text}
+					/>
 					<button
 						on:click={(e) => {
 							e.preventDefault();
@@ -278,7 +310,7 @@
 					</button>
 				</div>
 			{/each}
-	{/if}
+		{/if}
 	</div>
 {:else}
 	<div class="text-white h-full flex justify-center items-center">
