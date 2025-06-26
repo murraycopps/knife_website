@@ -37,7 +37,7 @@
 		{/if}
 	</div>
 	<h2 class="text-2xl font-bold text-oglala">{name}</h2>
-	<pre class="text-white">{description}</pre>
+	<p class="text-white whitespace-pre-line">{description}</p>
 	{#if link}
 		<a
 			href={link}

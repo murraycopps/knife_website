@@ -36,7 +36,7 @@
 		{/if}
 	</div>
 	<h2 class="text-2xl font-bold">{name}</h2>
-	<pre class="text-white">{description}</pre>
+	<p class="text-white whitespace-pre-line">{description}</p>
 </div>
 
 <style>
