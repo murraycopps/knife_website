@@ -3,13 +3,15 @@
 	import Data from '$lib/scripts/Data.js';
 	import { onMount } from 'svelte';
 	import CircleDance from '$lib/images/CircleDance.png';
-	let knives = [];
+	let galleryKnife;
+	let availableKnife;
 	let projects = [];
 
 	onMount(async () => {
-		knives = await Data.getGallery();
+		let knives = await Data.getGallery();
 		projects = await Data.getProjects();
-		knives = knives.filter((item) => item.display);
+		galleryKnife = knives.filter((item) => item.display == "g")[0];
+		availableKnife = knives.filter((item) => item.display == "a")[0];
 		projects = projects.filter((item) => item.display);
 	});
 </script>
@@ -37,20 +39,20 @@
 			</p>
 		</div>
 	</div>
-	{#if knives.length == 0 || projects.length == 0}
+	{#if !galleryKnife || !availableKnife || projects.length == 0}
 		<h1 class="text-3xl text-center text-white ">Loading...</h1>
 	{:else}
 		<DisplayBox
-			images={knives[1].images}
-			name={knives[1].name}
-			description={knives[1].description}
+			images={galleryKnife.images}
+			name={galleryKnife.name}
+			description={galleryKnife.description}
 			link="/gallery"
 			pageName="Gallery"
 		/>
 		<DisplayBox
-			images={knives[0].images}
-			name={knives[0].name}
-			description={knives[0].description}
+			images={availableKnife.images}
+			name={availableKnife.name}
+			description={availableKnife.description}
 			link="/gallery/available"
 			pageName="Available knives"
 		/>

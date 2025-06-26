@@ -25,7 +25,7 @@
 				alt={name}
 				class="w-full h-full {i !== currentImageIndex ? 'opacity-0' : ''} {i == 0
 					? 'relative'
-					: 'absolute'} "
+					: 'absolute'} object-contain"
 			/>
 		{/each}
 		{#if numberOfImages > 1}
