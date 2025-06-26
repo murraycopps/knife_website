@@ -7,7 +7,7 @@
 		images: [''],
 		link: '',
 		password: '',
-		collection: 'gallery',
+		collection: 'gallery'
 	};
 
 	const collectionOptions = [
@@ -16,7 +16,7 @@
 		{ value: 'available', label: 'Available' },
 		{ value: 'leather', label: 'Leather' },
 		{ value: 'spoons', label: 'Spoons' },
-		{ value: 'progress', label: 'Progress' },
+		{ value: 'progress', label: 'Progress' }
 	];
 
 	function addImageField() {
@@ -49,18 +49,19 @@
 							'Content-Type': 'application/json'
 						},
 						body: JSON.stringify({
-							collectionName: "gallery",
+							collectionName: 'gallery',
 							item: item.item,
 							id: item.id
 						})
 					});
 					return response.json();
 				};
-				await Promise.all(gallery.map(updateOne));
-				
-				await Data.reload();
-			}
-			else {
+				const updateAll = async () => {
+					await Promise.all(gallery.map(updateOne));
+					await Data.reload();
+				};
+				updateAll();
+			} else {
 				let projects = await Data.getProjects();
 				projects = projects.map((item, index) => {
 					const id = item._id;
@@ -86,9 +87,11 @@
 					});
 					return response.json();
 				};
-				await Promise.all(projects.map(updateOne));
-				
-				await Data.reload();
+				const updateAll = async () => {
+					await Promise.all(projects.map(updateOne));
+					await Data.reload();
+				};
+				updateAll();
 			}
 
 			// Filter out empty image strings
@@ -101,8 +104,8 @@
 				},
 				body: JSON.stringify({
 					...formData,
-					images: cleanImages,
-								})
+					images: cleanImages
+				})
 			});
 
 			const result = await response.json();
@@ -115,7 +118,7 @@
 					description: '',
 					images: [''],
 					password: formData.password,
-					collection: formData.collection,
+					collection: formData.collection
 				};
 			} else {
 				alert(`Error: ${result.error}`);

@@ -24,7 +24,7 @@
 				alt={name}
 				class="w-full h-full {i !== currentImageIndex ? 'opacity-0' : ''} {i == 0
 					? 'relative'
-					: 'absolute'} "
+					: 'absolute'} object-contain"
 			/>
 		{/each}
 		{#if numberOfImages > 1}
@@ -38,7 +38,14 @@
 	</div>
 	<h2 class="text-2xl font-bold text-oglala">{name}</h2>
 	<p class="text-white">{description}</p>
-	<a href={link} target="_blank" class="self-center py-2 text-2xl rounded-full text-oglala hover:text-oglala-400" >Purchase at: {link}</a>
+	{#if link}
+		<a
+			href={link}
+			target="_blank"
+			class="self-center py-2 text-2xl rounded-full text-oglala hover:text-oglala-400"
+			>Purchase at: {link}</a
+		>
+	{/if}
 </div>
 
 <style>
