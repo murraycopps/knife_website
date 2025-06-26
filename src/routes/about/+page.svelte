@@ -52,8 +52,8 @@
 						src={img + '.jpeg'}
 						alt={'about'}
 						class="w-full rounded-3xl {i !== currentImageIndex
-							? 'opacity-0'
-							: 'opacity-95'} top-0 {i === 0 ? 'relative' : 'absolute'} "
+							? 'opacity-0 z-0'
+							: 'opacity-95 z-10'} top-0 {i === 0 ? 'relative' : 'absolute'} "
 					/>
 				{/each}
 			</div>

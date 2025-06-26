@@ -21,7 +21,7 @@
 		<img
 			src={img + '.jpeg'}
 			alt={name}
-			class="w-full h-full {i !== currentImageIndex ? 'opacity-0' : ''} {i == 0
+			class="w-full h-full{i !== currentImageIndex ? 'opacity-0 z-0' : ' z-10'} {i == 0
 				? 'relative'
 				: 'absolute'} "
 		/>
