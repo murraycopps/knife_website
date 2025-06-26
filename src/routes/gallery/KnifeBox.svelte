@@ -27,10 +27,10 @@
 			/>
 		{/each}
 		{#if numberOfImages > 1}
-			<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-white"
+			<button on:click={moveToPreviousImage} class="w-8 h-8 z-10 rounded-full left bg-white"
 				>{'<'}</button
 			>
-			<button on:click={moveToNextImage} class="w-8 h-8 rounded-full right bg-white"
+			<button on:click={moveToNextImage} class="w-8 h-8 z-10 rounded-full right bg-white"
 				>{'>'}</button
 			>
 		{/if}

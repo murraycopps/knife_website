@@ -21,21 +21,21 @@
 		<img
 			src={img + '.jpeg'}
 			alt={name}
-			class="w-full h-full{i !== currentImageIndex ? 'opacity-0 z-0' : ' z-10'} {i == 0
+			class="w-full h-full {i !== currentImageIndex ? 'opacity-0 z-0' : ' z-10'} {i == 0
 				? 'relative'
 				: 'absolute'} "
 		/>
 	{/each}
 	{#if numberOfImages > 1}
-		<button on:click={moveToPreviousImage} class="w-8 h-8 rounded-full left bg-light-base">
+		<button on:click={moveToPreviousImage} class="w-8 h-8 z-10 rounded-full left bg-light-base">
 			{'<'}
 		</button>
-		<button on:click={moveToNextImage} class="w-8 h-8 rounded-full right bg-light-base">
+		<button on:click={moveToNextImage} class="w-8 h-8 z-10 rounded-full right bg-light-base">
 			{'>'}
 		</button>
 	{/if}
 
-	<h2 class="absolute bottom-0 w-full text-2xl font-bold bg-oglala text-white">{name}</h2>
+	<h2 class="absolute bottom-0 z-10 w-full text-2xl font-bold bg-oglala text-white">{name}</h2>
 </div>
 
 <style>
