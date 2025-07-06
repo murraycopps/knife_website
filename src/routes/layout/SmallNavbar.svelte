@@ -11,8 +11,23 @@
 	use:clickOutside
 	on:outsideclick={() => (out = false)}
 >
-	<button class=" fixed top-0 left-0 z-50 items-center p-4 flex" on:click={() => (out = !out)}>
+	<button
+		class=" fixed top-0 flex-col left-0 z-50 items-center p-4 flex"
+		on:click={() => (out = !out)}
+	>
 		<img src={CircleDance} alt="Circle Dance" class="w-12 h-12" />
+		<div class="fixed top-18 w-12 flex flex-col h-3">
+			<span
+				class="w-full absolute h-1 bg-white rounded-full {out
+					? 'top-rotate top-1'
+					: 'rotate-0  top-0'}"
+			/>
+			<span
+				class="w-full absolute h-1 bg-white rounded-full {out
+					? 'bottom-rotate bottom-1'
+					: 'rotate-0 bottom-0'}"
+			/>
+		</div>
 	</button>
 	<div
 		class="fixed top-0 left-0 right-1/3 flex flex-col items-center gap-2 p-2 pt-20 text-xl h-full align-middle bg-oglala {out
@@ -77,5 +92,14 @@
 	}
 	* {
 		transition: all 0.5s ease-in-out;
+	}
+	.top-rotate {
+		transform: rotate(30deg);
+	}
+	.bottom-rotate {
+		transform: rotate(-30deg);
+	}
+	.top-18 {
+		top: 4.5rem;
 	}
 </style>
