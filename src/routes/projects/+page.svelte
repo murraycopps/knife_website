@@ -33,19 +33,19 @@
 			images={data[0].images}
 			name={data[0].name}
 			link="/projects/spoons"
-			pageName="Spoons"
+			label="Handcarved Spoons"
 		/>
 		<DisplayBox
 			images={data[1].images}
 			name={data[1].name}
 			link="/projects/leather"
-			pageName="Leather"
+			label="Leather Work"
 		/>
 		<DisplayBox
 			images={data[2].images}
 			name={data[2].name}
 			link="/projects/other"
-			pageName="Other Projects"
+			label="Various Other Projects"
 		/>
 		<div class="w-full h-4 sm:col-span-2 lg:col-span-3 rounded-full bg-oglala" />
 		{#each projects as item}

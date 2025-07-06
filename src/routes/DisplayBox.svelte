@@ -2,7 +2,7 @@
 	export let images;
 	export let name;
 	export let link;
-	export let pageName;
+	export let label;
 	let numberOfImages = images.length;
 	let hovered = false;
 
@@ -38,7 +38,7 @@
 		{/if}
 		<h3 class="absolute bottom-0 w-full text-2xl font-bold {hovered ? "bg-oglala-700 opacity-1" : "bg-oglala-800 opacity-0"} text-white">{name}</h3>
 	</div>
-	<h2 class="p-4 text-xl font-bold text-center">Go to {pageName}</h2>
+	<h2 class="p-4 text-xl font-bold text-center">{label}</h2>
 </a>
 
 <style>

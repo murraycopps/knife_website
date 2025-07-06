@@ -47,21 +47,21 @@
 			name={galleryKnife.name}
 			description={galleryKnife.description}
 			link="/gallery"
-			pageName="Gallery"
+			label="Gallery of past knives"
 		/>
 		<DisplayBox
 			images={availableKnife.images}
 			name={availableKnife.name}
 			description={availableKnife.description}
 			link="/gallery/available"
-			pageName="Available knives"
+			label="Currently available knives"
 		/>
 		<DisplayBox
 			images={projects[0].images}
 			name={projects[0].name}
 			description={projects[0].description}
 			link="/projects"
-			pageName="Other Projects"
+			label="Other projects I have completed"
 		/>
 	{/if}
 </div>

@@ -21,7 +21,7 @@
 		<a
 			href="/gallery/available"
 			class="self-center lg:w-1/3 py-2 text-2xl rounded-full text-white hover:text-oglala-400"
-			>See knives available for purchase</a
+			>View knives available for purchase</a
 		>
 	</div>
 	{#each data as item}
