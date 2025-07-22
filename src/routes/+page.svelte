@@ -48,6 +48,7 @@
 			description={galleryKnife.description}
 			link="/gallery"
 			label="Gallery of past knives"
+			oneImage
 		/>
 		<DisplayBox
 			images={availableKnife.images}
@@ -55,6 +56,7 @@
 			description={availableKnife.description}
 			link="/gallery/available"
 			label="Currently available knives"
+			oneImage
 		/>
 		<DisplayBox
 			images={projects[0].images}
@@ -62,6 +64,7 @@
 			description={projects[0].description}
 			link="/projects"
 			label="Other projects I have completed"
+			oneImage
 		/>
 	{/if}
 </div>
