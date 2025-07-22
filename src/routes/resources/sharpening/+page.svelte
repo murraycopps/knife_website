@@ -46,30 +46,29 @@
 
 	<h2 class="text-3xl font-bold text-center text-oglala mt-2">My Recommendations</h2>
 	<p class="text-2xl text-center text-white">
-		My ideal system is a set of two stones and two strops. I recommend a double sided diamond stone, <a
+		My ideal system is a set of multiple stones and two strops. I recommend this double sided diamond stone, <a
 			href="https://www.amazon.com/SHARPAL-Diamond-Whetstone-Storage-Sharpening/dp/B07GRWN1PV/ref=sr_1_5?crid=3UNBMXBYBP7LO&keywords=sharpal%2B162n&qid=1657269463&sprefix=sharpal%2B162N%2Caps%2C275&sr=8-5&th=1"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Sharpal 162N</a
-		>
-		and a double sided ceramic stone,
+		>. This is maybe the only double sided diamond stone without grit contamination which is when grit from the course side gets imbedded on the fine side of the stone leaving a course scratch pattern on the fine side. I also recommend a double sided ceramic stone,
 		<a
 			href="https://fallkniven.se/en/knife/cc4/"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Fallkniven CC4</a
 		>. The diamond stone can sharpen any steel to a high finish while the ceramic stone can refine
-		most steels to a much higher finish, most steels do not require diamond stones but the high carbide steels do. The strops can
-		be made from leather and wood, learn how here
+		most steels to a much higher finish. Most steels do not require diamond stones but high carbide steels, such as most CPM or powder metallurgy steels, do. The strops can
+		be made from leather and wood, learn how here:
 		<a
 			href="https://www.youtube.com/watch?v=pMnS1jU4904"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Stropping Video</a
-		>, This video covers everything you need to know about stropping. I use my strops with stropping
+		>, this video covers nearly everything you need to know about stropping your knives. I use my strops with stropping
 		compound from
 		<a
 			href="https://stroppystuff.com/?srsltid=AfmBOoozkxSOObNxewqWww3BwPM5d6zlU8hiWCbmkuoOBTVOzGDwO6O6"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Stroppy Stuff</a
-		>, I use 6 microns after finishing on the sharpal stone or to touch up a dulling edge and I use
+		>. I use 6 microns after finishing on the sharpal stone or to touch up a dulling edge and I use
 		1 micron after finishing with the CC4 or after I strop with the 6 micron compound.
 		<br />
 		<br />
