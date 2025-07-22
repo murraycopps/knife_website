@@ -95,7 +95,7 @@
 		> which has a courser side then the DC4 replacing the finer side of the DC4 which is the same as the courser side of the CC4.
 		<br	/>
 		<br />
-		While cheeper, the small pocket stones are harder to use and will not last as long as the larger sharpal stone so the higher initial cost can be worth it in the long run. The sharpal stone is also much more comfortable to use and has a larger surface area which makes it easier to sharpen larger knives.
+		While cheaper, the small pocket stones are harder to use and will not last as long as the larger sharpal stone so the higher initial cost can be worth it in the long run. The sharpal stone is also much more comfortable to use and has a larger surface area which makes it easier to sharpen larger knives.
 
 	</p>
 
