@@ -66,6 +66,12 @@
 		<Divider horizontal />
 		<a
 			class="flex items-center px-8 py-2 rounded-sm hover:bg-oglala-600"
+			href="/resources"
+			on:click={() => (out = false)}>Resources</a
+		>
+		<Divider horizontal />
+		<a
+			class="flex items-center px-8 py-2 rounded-sm hover:bg-oglala-600"
 			href="/about"
 			on:click={() => (out = false)}
 		>

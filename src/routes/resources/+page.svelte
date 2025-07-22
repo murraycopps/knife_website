@@ -22,6 +22,9 @@
 	{#if !knife || !spoon}
 		<h1 class="text-3xl text-center text-white">Loading...</h1>
 	{:else}
+		<div class="flex flex-col gap-4 p-4 justify-evenly sm:col-span-2 lg:col-span-3">
+			<h1 class="text-5xl font-bold text-center text-oglala-500"> Maintenance and Steel Resources</h1>
+		</div>
 		<DisplayBox
 			images={knife.images}
 			name={knife.name}
