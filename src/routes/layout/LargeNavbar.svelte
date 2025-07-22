@@ -51,11 +51,12 @@
 			<span class="ml-1 {out ? 'rotate-180' : 'rotate-0'}">▾</span>
 		</button>
 		<div
-			class="absolute top-full rounded-sm left-0 w-full z-50 bg-oglala-500 text-white overflow-hidden {out
+			class="absolute top-full flex flex-col items-center rounded-sm left-0 w-full z-50 bg-oglala-500 text-white overflow-hidden {out
 				? 'rectangle-clip-visible'
 				: 'rectangle-clip-hidden'} "
 		>
 			{#each dropdown as item}
+			<Divider horizontal />
 				<a class="block px-8 py-2 hover:bg-oglala-600" href={item.link}>{item.name}</a>
 			{/each}
 		</div>

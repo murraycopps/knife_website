@@ -30,7 +30,9 @@
 			href="https://www.rmpfinishes.com/shop/waxes/wood-wax/"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">wood wax</a
-		> finish.
+		> finish. I have not used any of my spoons long enough where I need to reapply a finish so my knowledge
+		is based on what I have read and not personal experience please do your own research before applying
+		a finish.
 	</p>
 </div>
 
