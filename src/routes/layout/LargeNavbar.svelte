@@ -64,10 +64,13 @@
 	<Divider />
 	<a class="flex items-center px-8 py-2 rounded-sm hover:bg-oglala-600" href="/contact">Contact</a>
 	<div class="flex-1" />
-	<h2 class="mr-4 text-xl">Circle Dance Tools</h2>
+	<h2 class="mr-4 text-3xl name">Circle Dance Tools</h2>
 </header>
 
 <style>
+	.name {
+		font-family: 'Grechen Fuemen';
+	}
 	header {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		z-index: 1000;

@@ -84,11 +84,14 @@
 			on:click={() => (out = false)}>Contact</a
 		>
 		<div class="flex-1" />
-		<h2 class="mr-4 text-xl">Circle Dance Tools</h2>
+		<h2 class="mr-4 text-2xl name">Circle Dance Tools</h2>
 	</div>
 </header>
 
 <style>
+	.name {
+		font-family: 'Grechen Fuemen';
+	}
 	.circle-clip-hidden {
 		clip-path: circle(0% at 0 0);
 	}
