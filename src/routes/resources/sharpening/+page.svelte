@@ -7,7 +7,7 @@
 <div class="flex flex-col p-8 gap-4 lg:px-32">
 	<h1 class="text-5xl font-bold text-center text-oglala">Sharpening</h1>
 	<p class="text-2xl text-center text-white mt-2">
-		Most of my knife sharpening knowlage comes from the youtube channel <a
+		Most of my knife sharpening knowlege comes from the youtube channel <a
 			href="https://www.youtube.com/@OUTDOORS55"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">OUTDOORS55</a
@@ -21,15 +21,13 @@
 	<h2 class="text-3xl font-bold text-center text-oglala mt-2">Apexing</h2>
 	<p class="text-2xl text-center text-white">
 		Apexing is the process of having the bevels you sharpen meet in a point on the other side of the
-		knife, you can tell this has happened when you raise a burr entirely along the edge and then
+		knife, you can tell this has happened when you raise a burr across the entire edge and then
 		switch sides and raise a burr on the other side.
 	</p>
 	<h2 class="text-3xl font-bold text-center text-oglala mt-2">Refining</h2>
 	<p class="text-2xl text-center text-white">
 		Refining is the process of using finer and finer stones to refine the edge, each finer stone can
-		only need 5 passes in order to refine the scratch pattern left by the previous stone. This
-		process can be carried to any point but I believe it is best to stop after 1,000 grid and it
-		becomes less useful to go past 10,000 grid.
+		only need 5 passes in order to refine the scratch pattern left by the previous stone. You can sharpen up to any grit and get a usable edge but I believe it is best to sharpen past 1,000 grit however the sharpness benifits nearly stop above 10,000 grit.
 	</p>
 	<h2 class="text-3xl font-bold text-center text-oglala mt-2">The Burr</h2>
 	<p class="text-2xl text-center text-white">
@@ -41,29 +39,34 @@
 		<br />
 		<br />
 		The burr can be removed by deburring passes, which are constantly lighter alternating passes with
-		your final sharpening stone and a strop by doing light alternating passes backwards on the strop. It is important to not cut into the strop.
+		your final sharpening stone and a strop by doing light alternating passes backwards on the strop.
+		It is important to not cut into the strop.
 	</p>
 
 	<h2 class="text-3xl font-bold text-center text-oglala mt-2">My Recommendations</h2>
 	<p class="text-2xl text-center text-white">
-		My ideal system is a set of multiple stones and two strops. I recommend this double sided diamond stone, <a
+		My ideal system is a set of multiple stones and two strops. I recommend this double sided
+		diamond stone, <a
 			href="https://www.amazon.com/SHARPAL-Diamond-Whetstone-Storage-Sharpening/dp/B07GRWN1PV/ref=sr_1_5?crid=3UNBMXBYBP7LO&keywords=sharpal%2B162n&qid=1657269463&sprefix=sharpal%2B162N%2Caps%2C275&sr=8-5&th=1"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Sharpal 162N</a
-		>. This is maybe the only double sided diamond stone without grit contamination which is when grit from the course side gets imbedded on the fine side of the stone leaving a course scratch pattern on the fine side. I also recommend a double sided ceramic stone,
+		>. This is maybe the only double sided diamond stone without grit contamination which is when
+		grit from the course side gets imbedded on the fine side of the stone leaving a course scratch
+		pattern on the fine side. I also recommend a double sided ceramic stone,
 		<a
 			href="https://fallkniven.se/en/knife/cc4/"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Fallkniven CC4</a
 		>. The diamond stone can sharpen any steel to a high finish while the ceramic stone can refine
-		most steels to a much higher finish. Most steels do not require diamond stones but high carbide steels, such as most CPM or powder metallurgy steels, do. The strops can
-		be made from leather and wood, learn how here:
+		most steels to a much higher finish. Most steels do not require diamond stones but high carbide
+		steels, such as most CPM or powder metallurgy steels, do. The strops can be made from leather
+		and wood, learn how here:
 		<a
 			href="https://www.youtube.com/watch?v=pMnS1jU4904"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Stropping Video</a
-		>, this video covers nearly everything you need to know about stropping your knives. I use my strops with stropping
-		compound from
+		>, this video covers nearly everything you need to know about stropping your knives. I use my
+		strops with stropping compound from
 		<a
 			href="https://stroppystuff.com/?srsltid=AfmBOoozkxSOObNxewqWww3BwPM5d6zlU8hiWCbmkuoOBTVOzGDwO6O6"
 			target="_blank"
@@ -74,7 +77,7 @@
 		<br />
 		For the absolute cheapest solution I recommend a Fallkniven DC4 with a cheap stropping compound,
 		it is a diamond stone on one side and a ceramic stone on the other. It is small and portable and
-		can be used to sharpen any knife. 
+		can be used to sharpen any knife.
 		<a
 			href="https://fallkniven.se/en/knife/dc4/"
 			target="_blank"
@@ -84,20 +87,23 @@
 			href="https://fallkniven.se/en/knife/green-micro-fine-honing-compound-bar/"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Fallkniven Green Micro Fine Honing Compound</a
-		>. This setup can be paired with a CC4 ceramic stone for
-		refining the edge to a higher finish but it cannot sharpen high carbide steels like M4 or
-		CPM 20CV so the expensive diamond stropping compound is not needed (it is still better for all steels the the green compound just not required). If pairing with the CC4 I would use this
+		>. This setup can be paired with a CC4 ceramic stone for refining the edge to a higher finish
+		but it cannot sharpen high carbide steels like M4 or CPM 20CV so the expensive diamond stropping
+		compound is not needed although still recomended. If pairing with the CC4 I would use this
 		<a
 			href="https://fallkniven.se/en/knife/fdd-foldable-diamond-ceramic-sharpener/"
 			target="_blank"
 			class="text-oglala-400 hover:text-oglala-300">Fallkniven FDD</a
-		> which has a courser side then the DC4 replacing the finer side of the DC4 which is the same as the courser side of the CC4.
-		<br	/>
+		>
+		which has a courser side then the DC4 replacing the finer side of the DC4 which is the same as
+		the courser side of the CC4.
 		<br />
-		While cheaper, the small pocket stones are harder to use and will not last as long as the larger sharpal stone so the higher initial cost can be worth it in the long run. The sharpal stone is also much more comfortable to use and has a larger surface area which makes it easier to sharpen larger knives.
-
+		<br />
+		While cheaper, the small pocket stones are harder to use and will not last as long as the larger
+		sharpal stone so the higher initial cost can be worth it in the long run. The sharpal stone is also
+		much more comfortable to use and has a larger surface area which makes it easier to sharpen larger
+		knives.
 	</p>
-
 </div>
 
 <style>
