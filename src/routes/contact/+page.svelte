@@ -71,11 +71,7 @@
 		<div>
 			<h2 class="text-3xl text-center mb-4 text-oglala">Contact me</h2>
 			<p class="text-2xl text-white">
-				If you would like to get in touch with me, please fill out the form or email me at circledancetools@gmail.com and I will get back to you as soon as possible. Please note that I am not currently accepting custom orders at this
-				time but feel free to reach out with your ideas and I will see what I can do.
-				<br /> <br />
-				Purchases are generally done through etsy but feel free to reach out with any questions you may have regarding
-				my knives.
+				If you would like to get in touch with me, please fill out the form or email me at circledancetools@gmail.com and I will get back to you as soon as possible. Please note that I am very busy and custom orders may take a long time or won't be accepted until I have time to work on them.
 				<br /> <br />
 				Thanks for stopping by!
 			</p>
@@ -89,7 +85,7 @@
 				name="name"
 				required
 				placeholder="Name"
-				class="p-2 rounded-lg border "
+				class="p-2 rounded-lg border bg-white"
 				bind:value={data.name}
 			/>
 			<input
@@ -97,7 +93,7 @@
 				name="email"
 				required
 				placeholder="Email"
-				class="p-2 rounded-lg border"
+				class="p-2 rounded-lg border bg-white"
 				bind:value={data.email}
 			/>
 			<input
@@ -105,7 +101,7 @@
 				name="subject"
 				required
 				placeholder="Subject"
-				class="p-2 rounded-lg border"
+				class="p-2 rounded-lg border bg-white"
 				bind:value={data.subject}
 			/>
 			<textarea
@@ -113,7 +109,7 @@
 				required
 				rows="3"
 				placeholder="Message"
-				class="p-2 rounded-lg border"
+				class="p-2 rounded-lg border bg-white"
 				bind:value={data.message}
 			/>
 			<button type="submit" class="p-2 rounded-lg bg-oglala text-white hover:bg-oglala-400"

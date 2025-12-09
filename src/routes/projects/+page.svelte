@@ -23,7 +23,7 @@
 	<div class="flex flex-col justify-center sm:col-span-2 lg:col-span-3 gap-4 p-10">
 		<h1 class="text-5xl font-bold text-center text-oglala">Other Projects</h1>
 		<p class="text-2xl enter text-l text-white">
-			Gallery of other projects including carving and leather work
+			Gallery of my spoons and other projects including carving and leather work
 		</p>
 	</div>
 	{#if data.length == 0}

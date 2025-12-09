@@ -75,8 +75,8 @@
 		or carving knives refined for high-level performance. As the saying goes, “the smaller the knife,
 		the better the woodsman.” I aim to squeeze maximum capability out of every inch and make knives meant for skilled users.
 		<br /><br />
-		Each blade is shaped through stock removal, finished by hand, and rigorously tested through real
-		use—especially during carving, where subtle flaws can’t hide. I prefer tough stainless steels like
+		Each blade is shaped through stock removal, finished by hand, and each aspect is rigorously tested through real
+		use. I prefer tough stainless steels like
 		14C28N and AEB-L for their reliability and value, while also exploring high-performance super steels
 		like CPM M4. Normally I avoid most simple carbon steels due to poor properity balance however some are great high toughness steels and Pops Procut is a new steel with great properties which is easy to work with. My handles are made from wood or micarta, and all blades, aside from my Procut knives, are heat-treated professionally
 		to precise specifications for optimal durability and edge retention.

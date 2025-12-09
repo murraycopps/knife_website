@@ -17,7 +17,7 @@
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 text-center">
 	<div class="flex flex-col justify-evenly sm:col-span-2 lg:col-span-3 gap-8 p-10">
-		<h1 class="text-5xl font-bold text-center text-oglala">Upcoming knives and projects</h1>
+		<h1 class="text-5xl font-bold text-center text-oglala">Upcoming knives and more</h1>
 	</div>
 	{#each data as item}
 		<ProgressBox images={item.images} name={item.name} description={item.description} />
