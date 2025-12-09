@@ -138,12 +138,12 @@
 >
 	<div class="form-group">
 		<label for="name">Item Name</label>
-		<input type="text" bind:value={formData.name} required />
+		<input type="text" bind:value={formData.name} required class="bg-white" />
 	</div>
 
 	<div class="form-group">
 		<label for="description">Description</label>
-		<textarea bind:value={formData.description} rows="4" placeholder="Knives Only" />
+		<textarea bind:value={formData.description} rows="4" placeholder="Knives Only" class="bg-white"/>
 	</div>
 
 	<div class="form-group">
@@ -154,6 +154,7 @@
 					type="url"
 					bind:value={formData.images[index]}
 					placeholder="https://example.com/image.jpg"
+					class="bg-white"
 				/>
 				{#if formData.images.length > 1}
 					<button
@@ -169,12 +170,12 @@
 
 	<div class="form-group">
 		<label for="link">Link</label>
-		<input type="url" bind:value={formData.link} placeholder="https://example.com" />
+		<input type="url" bind:value={formData.link} placeholder="https://example.com" class="bg-white" />
 	</div>
 
 	<div class="form-group">
 		<label for="collection">Collection</label>
-		<select bind:value={formData.collection} class="text-black">
+		<select bind:value={formData.collection} class="text-black bg-white">
 			{#each collectionOptions as option}
 				<option value={option.value}>{option.label}</option>
 			{/each}
@@ -182,7 +183,7 @@
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
-		<input type="password" bind:value={formData.password} required />
+		<input type="password" bind:value={formData.password} required class="bg-white"/>
 	</div>
 
 	<button type="submit">Create Item</button>
