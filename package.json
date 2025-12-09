@@ -18,7 +18,6 @@
 		"@tailwindcss/postcss": "^4.1.17",
 		"@tailwindcss/vite": "^4.1.17",
 		"@types/node": "^24",
-		"cssnano": "^5.1.15",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.0",

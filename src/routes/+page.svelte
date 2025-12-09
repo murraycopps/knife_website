@@ -33,7 +33,7 @@
 
 			<p class="text-2xl enter text-l text-white sm:col-span-3">
 				Inspired by years of carving and bushcraft in the woods, Circle Dance knives are built for
-				real work—simple, reliable, and ready to be used hard. Each blade is handcrafted from
+				real work, simple, reliable, and ready to be used hard. Each blade is handcrafted from
 				premium steels paired with durable wood or micarta handles, and designed to deliver top-tier
 				performance whether you're deep in the forest or carving at home.
 			</p>
@@ -47,7 +47,7 @@
 			name={galleryKnife.name}
 			description={galleryKnife.description}
 			link="/gallery"
-			label="Gallery of past knives"
+			label="Gallery of Past Knives"
 			oneImage
 		/>
 		<DisplayBox
@@ -55,7 +55,7 @@
 			name={availableKnife.name}
 			description={availableKnife.description}
 			link="/gallery/available"
-			label="Currently available knives"
+			label="Currently Available Knives"
 			oneImage
 		/>
 		<DisplayBox
@@ -63,7 +63,7 @@
 			name={projects[0].name}
 			description={projects[0].description}
 			link="/projects"
-			label="Other projects I have completed"
+			label="Spoons and Other Projects"
 			oneImage
 		/>
 	{/if}

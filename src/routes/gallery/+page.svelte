@@ -20,7 +20,7 @@
 		<h1 class="text-5xl font-bold text-center text-oglala">Gallery of past knives</h1>
 		<a
 			href="/gallery/available"
-			class="self-center lg:w-1/3 py-2 text-2xl rounded-full text-white hover:text-oglala-400"
+			class="self-center lg:w-1/3 py-2 text-2xl rounded-full text-oglala-500 hover:text-oglala-400"
 			>View knives available for purchase</a
 		>
 	</div>
