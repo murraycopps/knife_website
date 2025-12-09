@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/analytics": "^1.6.1",
 		"mongodb": "^6.16.0"
 	}
 }

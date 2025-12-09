@@ -3,6 +3,11 @@
 	import './styles.css';
 	import SmallNavbar from './layout/SmallNavbar.svelte';
 	import LargeNavbar from './layout/LargeNavbar.svelte';
+	import { dev } from '$app/environment';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+
+	injectAnalytics({ mode: dev ? 'development' : 'production' });
+
 	let large = false;
 
 	onMount(() => {
