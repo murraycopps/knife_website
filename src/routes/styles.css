@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Grechen+Fuemen');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.cjs";
 
 body {
 	background-color: #14090b;
