@@ -1,6 +1,7 @@
 <!-- src/routes/items/ItemForm.svelte -->
 <script>
 	import Data from '$lib/scripts/Data.js';
+
 	let formData = {
 		name: '',
 		description: '',
@@ -19,15 +20,18 @@
 		{ value: 'progress', label: 'Progress' }
 	];
 
-	function addImageField() {
+	function addImageField(e) {
+		e.preventDefault();
 		formData.images = [...formData.images, ''];
 	}
 
-	function removeImageField(index) {
+	function removeImageField(event, index) {
+		event.preventDefault();
 		formData.images = formData.images.filter((_, i) => i !== index);
 	}
 
-	async function handleSubmit() {
+	async function handleSubmit(event) {
+		event.preventDefault();
 		try {
 			// increase every other item by 1
 			if (formData.collection === 'gallery' || formData.collection === 'available') {
@@ -127,15 +131,16 @@
 			console.error('Submission error:', error);
 		}
 	}
+
+	function splitImages() {
+		formData.images = formData.images.map((urls) => urls.split(' ')).flat();
+	}
 </script>
 
 <svelte:head>
 	<title>Add</title>
 </svelte:head>
-<form
-	on:submit|preventDefault={handleSubmit}
-	class="fixed left-0 w-screen p-2 overflow-y-auto text-white top-20"
->
+<form onsubmit={handleSubmit} class="fixed left-0 w-screen p-2 overflow-y-auto text-white top-20">
 	<div class="form-group">
 		<label for="name">Item Name</label>
 		<input type="text" bind:value={formData.name} required class="bg-white" />
@@ -143,7 +148,12 @@
 
 	<div class="form-group">
 		<label for="description">Description</label>
-		<textarea bind:value={formData.description} rows="4" placeholder="Knives Only" class="bg-white"/>
+		<textarea
+			bind:value={formData.description}
+			rows="4"
+			placeholder="Knives Only"
+			class="bg-white"
+		/>
 	</div>
 
 	<div class="form-group">
@@ -153,24 +163,28 @@
 				<input
 					type="url"
 					bind:value={formData.images[index]}
+					onchange={splitImages}
 					placeholder="https://example.com/image.jpg"
 					class="bg-white"
 				/>
 				{#if formData.images.length > 1}
-					<button
-						type="button"
-						on:click|preventDefault={() => removeImageField(index)}
-						class="remove-btn">×</button
+					<button type="button" onclick={(e) => removeImageField(e, index)} class="remove-btn"
+						>×</button
 					>
 				{/if}
 			</div>
 		{/each}
-		<button type="button" on:click|preventDefault={addImageField}> Add Another Image </button>
+		<button type="button" onclick={addImageField}> Add Another Image </button>
 	</div>
 
 	<div class="form-group">
 		<label for="link">Link</label>
-		<input type="url" bind:value={formData.link} placeholder="https://example.com" class="bg-white" />
+		<input
+			type="url"
+			bind:value={formData.link}
+			placeholder="https://example.com"
+			class="bg-white"
+		/>
 	</div>
 
 	<div class="form-group">
@@ -183,7 +197,7 @@
 	</div>
 	<div class="form-group">
 		<label for="password">Password</label>
-		<input type="password" bind:value={formData.password} required class="bg-white"/>
+		<input type="password" bind:value={formData.password} required class="bg-white" />
 	</div>
 
 	<button type="submit">Create Item</button>
