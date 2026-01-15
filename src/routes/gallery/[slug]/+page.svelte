@@ -41,10 +41,14 @@
 
 	const moveToNextImage = () => {
 		currentImageIndex = (currentImageIndex + 1) % numberOfImages;
+		const rightOffset = displayedImages.length - displayedOffset - 1;
+		updateDisplayedImages(displayedOffset, rightOffset);
 	};
 
 	const moveToPreviousImage = () => {
 		currentImageIndex = (currentImageIndex - 1 + numberOfImages) % numberOfImages;
+		const rightOffset = displayedImages.length - displayedOffset - 1;
+		updateDisplayedImages(displayedOffset, rightOffset);
 	};
 
 	const updateDisplayedImages = (leftOffset, rightOffset) => {
